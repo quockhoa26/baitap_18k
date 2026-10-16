@@ -1,0 +1,139 @@
+
+/* 1. Variables */
+$color-purple: #9933cc;
+$color-blue: #33b5e5;
+$color-footer: #0099cc;
+$color-white: #ffffff;
+$color-grid: #f1f1f1;
+$color-border: #000000;
+$color-grey: grey;
+
+$width-full: 100%;
+$width-quarter: 25%;
+$width-column: 8.33%;
+
+/* 2. Mixins */
+@mixin grid-row($height) {
+  overflow: auto;
+  position: relative;
+  height: $height;
+}
+
+@mixin grid-cell($background: $color-white) {
+  background-color: $background;
+}
+
+/* 3. Base styles */
+* {
+  box-sizing: border-box;
+}
+
+.gridcontainer {
+  width: $width-full;
+}
+
+.gridwrapper {
+  @include grid-row(250px);
+}
+
+.gridcontent {
+  width: $width-column;
+  margin: 0;
+  border-right: 1px solid $color-grey;
+  height: $width-full;
+  float: left;
+  background-color: $color-grid;
+}
+
+/* 4. Main page */
+.page {
+  position: absolute;
+  opacity: 0.9;
+  width: auto;
+  left: 8px;
+  right: 10px;
+
+  .header {
+    @include grid-row(90px);
+
+    .gridcontent {
+      width: $width-full;
+      background-color: $color-purple;
+      border-right-color: transparent;
+    }
+  }
+
+  .main {
+    @include grid-row(230px);
+
+    .sidebar {
+      width: $width-quarter;
+      padding: 15px 0 0;
+      border: none;
+      background-color: $color-white;
+
+      .block {
+        width: $width-full;
+        height: 15%;
+        margin-bottom: 10px;
+        @include grid-cell($color-blue);
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .empty {
+      background-color: $color-white;
+      border: none;
+    }
+
+    .rightbar {
+      width: $width-quarter;
+      padding-top: 15px;
+      border: none;
+      background-color: $color-white;
+
+      .block {
+        width: $width-full;
+        height: 92%;
+        @include grid-cell($color-blue);
+      }
+    }
+  }
+
+  .footer {
+    @include grid-row(50px);
+
+    .gridcontent {
+      width: $width-full;
+      background-color: $color-footer;
+      border-right-color: transparent;
+    }
+  }
+}
+
+/* 5. Grid guide */
+.guides {
+  opacity: 0.1;
+
+  .guide-row {
+    @include grid-row(370px);
+
+    .gridcontent {
+      background-color: $color-white;
+      border-right: 1px solid $color-border;
+      border-left: 1px solid $color-border;
+
+      &:not(:first-child) {
+        border-left: none;
+      }
+    }
+  }
+}
+
+/* 6. Description */
+.description {
+  margin-top: 16px;
+}

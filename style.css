@@ -1,0 +1,121 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.gridcontainer {
+  width: 100%;
+}
+
+.gridwrapper {
+  overflow: auto;
+  position: relative;
+  height: 250px;
+}
+
+.gridcontent {
+  width: 8.33%;
+  margin: 0;
+  border-right: 1px solid grey;
+  height: 100%;
+  float: left;
+  background-color: #f1f1f1;
+}
+
+.page {
+  position: absolute;
+  opacity: 0.9;
+  width: auto;
+  left: 8px;
+  right: 10px;
+}
+
+.page .header {
+  overflow: auto;
+  position: relative;
+  height: 90px;
+}
+
+.page .header .gridcontent {
+  width: 100%;
+  background-color: #9933cc;
+  border-right-color: transparent;
+}
+
+.page .main {
+  overflow: auto;
+  position: relative;
+  height: 230px;
+}
+
+.page .main .sidebar {
+  width: 25%;
+  padding: 15px 0 0;
+  border: none;
+  background-color: #ffffff;
+}
+
+.page .main .sidebar .block {
+  width: 100%;
+  height: 15%;
+  margin-bottom: 10px;
+  background-color: #33b5e5;
+}
+
+.page .main .sidebar .block.last {
+  margin-bottom: 0;
+}
+
+.page .main .empty {
+  background-color: #ffffff;
+  border: none;
+}
+
+.page .main .rightbar {
+  width: 25%;
+  padding-top: 15px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.page .main .rightbar .block {
+  width: 100%;
+  height: 92%;
+  background-color: #33b5e5;
+}
+
+.page .footer {
+  overflow: auto;
+  position: relative;
+  height: 50px;
+}
+
+.page .footer .gridcontent {
+  width: 100%;
+  background-color: #0099cc;
+  border-right-color: transparent;
+}
+
+.guides {
+  opacity: 0.1;
+}
+
+.guides .guide-row {
+  overflow: auto;
+  position: relative;
+  height: 370px;
+}
+
+.guides .guide-row .gridcontent {
+  background-color: #ffffff;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+
+.guides .guide-row .gridcontent:not(:first-child) {
+  border-left: none;
+}
+
+.description {
+  margin-top: 16px;
+}
